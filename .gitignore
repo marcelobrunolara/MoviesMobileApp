@@ -63,3 +63,11 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+/src/MoviesMobileApp/MoviesMobileApp/MoviesMobileApp/obj
+/src/MoviesMobileApp/MoviesMobileApp/MoviesMobileApp.Android/obj
+/src/MoviesMobileApp/MoviesMobileApp/MoviesMobileApp.iOS/obj/iPhone/Debug
+/src/MoviesMobileApp/MoviesMobileApp/MoviesMobileApp.iOS/obj/iPhoneSimulator/Debug
+/.vs/slnx.sqlite
+/src/MoviesMobileApp/.vs/MoviesMobileApp/v15/Server/sqlite3
+/.vs
+/src/MoviesMobileApp/.vs/MoviesMobileApp/v15
