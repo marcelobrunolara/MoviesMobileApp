@@ -1,0 +1,21 @@
+﻿namespace ML.Framework.Base.Servicos.Models
+{
+    public  class Result<T>
+    {
+        public bool IsValid { get; private set; }
+        public string Message { get; private set; } = string.Empty;
+        public T Content { get; private set; }
+
+        public Result(bool isValid, string message, T content)
+        {
+            IsValid = isValid;
+            Message = message; 
+            Content = content;
+        }  
+        
+        public static Result<T> Create(bool isValid, string message, T content)
+        {
+            return new Result<T>(isValid, message, content);
+        }
+    }
+}

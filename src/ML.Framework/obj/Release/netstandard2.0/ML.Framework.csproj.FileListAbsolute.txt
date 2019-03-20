@@ -1,0 +1,12 @@
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\bin\Release\netstandard2.0\ML.Framework.deps.json
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\bin\Release\netstandard2.0\ML.Framework.dll
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\bin\Release\netstandard2.0\ML.Framework.pdb
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\ML.Framework.Base.MVVM.Resources.FrameworkResources.resources
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\ML.Framework.Base.Servicos.Resources.ServiceInternalMessages.resources
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\ML.Framework.csproj.GenerateResource.cache
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\ML.Framework.csproj.CoreCompileInputs.cache
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\ML.Framework.AssemblyInfoInputs.cache
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\ML.Framework.AssemblyInfo.cs
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\ML.Framework.dll
+C:\Users\1033070\source\repos\MoviesMobileApp\ML.Framework\obj\Release\netstandard2.0\ML.Framework.pdb
