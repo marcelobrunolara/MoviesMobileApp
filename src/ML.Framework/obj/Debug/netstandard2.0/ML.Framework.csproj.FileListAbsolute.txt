@@ -21,7 +21,6 @@ D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.As
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\XamlC.stamp
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.dll
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.pdb
-D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.csprojAssemblyReference.cache
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.Base.Services.Resources.ServiceInternalMessages.resources
 C:\Users\1033070\source\repos\MoviesMobileApp-development\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.Base.MVVM.Resources.FrameworkResources.resources
 C:\Users\1033070\source\repos\MoviesMobileApp-development\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.Base.Services.Resources.ServiceInternalMessages.resources
