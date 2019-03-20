@@ -2,7 +2,7 @@
 using ML.Framework.Base.MVVM.Interface;
 using System;
 
-namespace ML.Framework.Base.MVVM
+namespace ML.Framework.Base.MVVM.Helper
 {
     public class PageHelper
     {

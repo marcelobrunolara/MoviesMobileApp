@@ -1,4 +1,8 @@
-﻿using MoviesMobileApp.Helpers;
+﻿using ML.Framework.Base.MVVM.Helper;
+using MoviesMobileApp.Helpers;
+using MoviesMobileApp.IoC;
+using MoviesMobileApp.ViewModels.Interfaces;
+using MoviesMobileApp.Views.Interfaces;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +15,9 @@ namespace MoviesMobileApp
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
+
+            var firstPage = PageHelper.CreateMainPage<IUpcomingMoviesPage, IUpcomingMoviesViewModel>();
+            MainPage = new NavigationPage(firstPage as Page);
         }
 
         protected override void OnStart()
@@ -21,6 +27,7 @@ namespace MoviesMobileApp
 
         private void FirstSetUp()
         {
+            IoCContainer.RegisterDependencies();
             GetDeviceLanguageAndRegion();
         }
 

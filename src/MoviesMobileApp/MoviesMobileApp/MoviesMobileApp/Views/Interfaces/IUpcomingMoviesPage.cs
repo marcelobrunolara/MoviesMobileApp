@@ -2,7 +2,7 @@
 
 namespace MoviesMobileApp.Views.Interfaces
 {
-    public interface IUpcomingMoviesListPage : IPage
+    public interface IUpcomingMoviesPage : IPage
     {
     }
 }
