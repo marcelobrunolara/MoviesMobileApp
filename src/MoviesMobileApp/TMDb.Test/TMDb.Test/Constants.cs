@@ -13,8 +13,8 @@ namespace TMDb.Test
 
         public const string ImageConfigurationsResource = "configuration?api_key={0}";
         public const string MoviesGenreResource = "genre/movie/list?api_key={0}&language={1}";
-        public const string UpComingMoviesResource = "movie/upcoming?api_key={0}&language={1}&page={2}&region={3}";
-        public const string MovieDetailResource = "/movie/{movie_id}";
-
+        public const string UpComingMoviesResource = "movie/upcoming?api_key={0}&page={1}&language={2}&region={3}";
+        public const string MovieDetailResource = "/movie/{0}?api_key={0}&append_to_response=images";
+        public const string MovieSearchResoruce = "search/movie?api_key={0}&query={1}&page={2}&language={3}&region={4}";
     }
 }

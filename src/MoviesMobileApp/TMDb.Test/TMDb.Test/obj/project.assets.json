@@ -1616,8 +1616,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "SimpleInjector": "4.4.3",
-          "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "3.6.0.220655"
+          "Xamarin.Forms": "3.6.0.264807"
         },
         "compile": {
           "bin/placeholder/ML.Framework.dll": {}
@@ -1631,6 +1630,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
+          "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "3.6.0.264807"
         },
         "compile": {
@@ -5657,6 +5657,7 @@
         "lib/monoandroid80/Xamarin.Essentials.pdb",
         "lib/monoandroid80/Xamarin.Essentials.xml",
         "lib/monoandroid81/Xamarin.Essentials.dll",
+        "lib/monoandroid81/Xamarin.Essentials.dll.mdb",
         "lib/monoandroid81/Xamarin.Essentials.pdb",
         "lib/monoandroid81/Xamarin.Essentials.xml",
         "lib/monoandroid90/Xamarin.Essentials.dll",
@@ -5673,6 +5674,7 @@
         "lib/uap10.0.16299/Xamarin.Essentials.pri",
         "lib/uap10.0.16299/Xamarin.Essentials.xml",
         "lib/xamarinios10/Xamarin.Essentials.dll",
+        "lib/xamarinios10/Xamarin.Essentials.dll.mdb",
         "lib/xamarinios10/Xamarin.Essentials.pdb",
         "lib/xamarinios10/Xamarin.Essentials.xml",
         "readme.txt",

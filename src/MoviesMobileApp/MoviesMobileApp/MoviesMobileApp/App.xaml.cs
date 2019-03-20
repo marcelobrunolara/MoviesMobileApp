@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoviesMobileApp.Helpers;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,23 +11,31 @@ namespace MoviesMobileApp
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            FirstSetUp();
         }
 
-        protected override void OnSleep()
+        private void FirstSetUp()
         {
-            // Handle when your app sleeps
+            GetDeviceLanguageAndRegion();
         }
 
-        protected override void OnResume()
+        private void GetDeviceLanguageAndRegion()
         {
-            // Handle when your app resumes
+            if (LanguageAndInfoAlreadyDefined())
+                return;
+
+            MyPreferences.LanguageInfo = System.Globalization.CultureInfo.CurrentCulture.Name;
+            MyPreferences.RegionInfo = System.Globalization.RegionInfo.CurrentRegion.TwoLetterISORegionName;
+        }
+
+        private bool LanguageAndInfoAlreadyDefined()
+        {
+            return !string.IsNullOrEmpty(MyPreferences.LanguageInfo) && !string.IsNullOrEmpty(MyPreferences.RegionInfo);
         }
     }
 }

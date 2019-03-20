@@ -1,6 +1,6 @@
 using ML.Framework.Base.IoC;
-using ML.Framework.Base.Servicos.Conector;
-using ML.Framework.Base.Servicos.Conector.Interface;
+using ML.Framework.Base.Services.Connector;
+using ML.Framework.Base.Services.Connector.Interface;
 using NUnit.Framework;
 
 namespace TMDb.Test
