@@ -1,7 +1,6 @@
-﻿using MoviesMobileApp.Services.DataDictionary;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace MoviesMobileApp.Services.Models.MovieDb
+namespace MoviesMobileApp.Services.MovieDb.Models
 {
     public class ProductionCompanyModel : IDataDictionary
     {

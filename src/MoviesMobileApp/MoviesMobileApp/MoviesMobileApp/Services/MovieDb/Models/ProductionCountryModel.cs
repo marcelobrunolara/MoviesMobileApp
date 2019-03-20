@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MoviesMobileApp.Services.Models.MovieDb
+namespace MoviesMobileApp.Services.MovieDb.Models
 {
     public class ProductionCountryModel
     {

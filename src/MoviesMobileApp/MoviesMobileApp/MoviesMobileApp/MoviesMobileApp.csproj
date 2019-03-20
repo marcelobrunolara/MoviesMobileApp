@@ -18,8 +18,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\ML.Framework\ML.Framework.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\MovieDb\" />
-  </ItemGroup>
 </Project>

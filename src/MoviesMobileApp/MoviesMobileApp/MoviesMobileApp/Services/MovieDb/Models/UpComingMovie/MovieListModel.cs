@@ -1,11 +1,9 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace MoviesMobileApp.Services.Models.MovieDb.UpComingMovie
+namespace MoviesMobileApp.Services.MovieDb.Models
 {
-    public class UpComingMoviesModel
+    public class MovieSearchList
     {
         [JsonProperty("results")]
         public List<MovieModel> Movies { get; set; }
@@ -17,7 +15,7 @@ namespace MoviesMobileApp.Services.Models.MovieDb.UpComingMovie
         public int TotalResults { get; set; }
 
         [JsonProperty("dates")]
-        public DateRangeModel Dates { get; set; }
+        public UpcomingMoviesDateRange Dates { get; set; }
 
         [JsonProperty("total_pages")]
         public int TotalPages { get; set; }

@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace MoviesMobileApp.Services.Models.MovieDb.MovieDetail
+namespace MoviesMobileApp.Services.MovieDb.Models
 {
-    public class MovieDetail
+    public class MovieDetailModel
     {
         [JsonProperty("adult")]
         public bool Adult { get; set; }
@@ -15,7 +15,7 @@ namespace MoviesMobileApp.Services.Models.MovieDb.MovieDetail
         public int Budget { get; set; }
 
         [JsonProperty("genres")]
-        public List<GenderModel> Genres { get; set; }
+        public List<GenreModel> Genres { get; set; }
 
         [JsonProperty("homepage")]
         public string HomePage { get; set; }
@@ -42,10 +42,10 @@ namespace MoviesMobileApp.Services.Models.MovieDb.MovieDetail
         public object PosterPath { get; set; }
 
         [JsonProperty("production_companies")]
-        public List<ProductionCompany> ProductionCompanies { get; set; }
+        public List<ProductionCompanyModel> ProductionCompanies { get; set; }
 
         [JsonProperty("production_countries")]
-        public List<ProductionCountry> ProductionCountries { get; set; }
+        public List<ProductionCountryModel> ProductionCountries { get; set; }
 
         [JsonProperty("release_date")]
         public string ReleaseDate { get; set; }
@@ -57,7 +57,7 @@ namespace MoviesMobileApp.Services.Models.MovieDb.MovieDetail
         public int runtime { get; set; }
 
         [JsonProperty("spoken_languages")]
-        public List<SpokenLanguage> SpokenLanguages { get; set; }
+        public List<SpokenLanguageModel> SpokenLanguages { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }

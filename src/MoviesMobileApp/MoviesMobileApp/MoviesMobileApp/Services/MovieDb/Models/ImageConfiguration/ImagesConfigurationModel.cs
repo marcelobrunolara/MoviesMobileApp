@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Serialization;
 using System.Collections.Generic;
 
-namespace MoviesMobileApp.Services.Models.MovieDb
+namespace MoviesMobileApp.Services.MovieDb.Models
 {
     public class ImagesConfigurationModel
     {

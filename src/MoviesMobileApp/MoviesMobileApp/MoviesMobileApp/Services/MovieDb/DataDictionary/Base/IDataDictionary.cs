@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MoviesMobileApp.Services.DataDictionary
+namespace MoviesMobileApp.Services.MovieDb
 {
     public interface IDataDictionary
     {

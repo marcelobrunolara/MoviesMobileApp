@@ -48,3 +48,4 @@ D:\Source\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework
 D:\Source\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Source\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.dll
 D:\Source\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.pdb
+D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.csprojAssemblyReference.cache

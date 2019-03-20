@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace MoviesMobileApp.Services.Models.MovieDb
+namespace MoviesMobileApp.Services.MovieDb.Models
 {
     public class MovieModel
     {
