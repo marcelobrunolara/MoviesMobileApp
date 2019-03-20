@@ -10,12 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Services\NewFolder\**" />
-    <EmbeddedResource Remove="Services\NewFolder\**" />
-    <None Remove="Services\NewFolder\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
@@ -23,5 +17,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\ML.Framework\ML.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\MovieDb\" />
   </ItemGroup>
 </Project>
