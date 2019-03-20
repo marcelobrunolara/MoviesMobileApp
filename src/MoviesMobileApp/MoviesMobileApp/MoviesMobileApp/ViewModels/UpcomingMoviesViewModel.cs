@@ -10,7 +10,6 @@ namespace MoviesMobileApp.ViewModels
 
         public override void ExecuteBeforeBinding()
         {
-            PageProxy.
             base.ExecuteBeforeBinding();
         }
 

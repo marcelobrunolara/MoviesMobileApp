@@ -1,11 +1,9 @@
 ﻿using ML.Framework.Base.IoC;
 using ML.Framework.Base.Services.Connector;
 using ML.Framework.Base.Services.Connector.Interface;
-using NUnit.Framework;
+using MoviesMobileApp.Services.MovieDb.Models;
 using Newtonsoft.Json;
-using MoviesMobileApp.Services.Models.MovieDb;
-using ML.Framework.Base.Services.Models;
-using System;
+using NUnit.Framework;
 using System.Net;
 
 namespace TMDb.Test.Services
