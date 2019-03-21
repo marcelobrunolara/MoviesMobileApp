@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label_back" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="label_genre_colon" xml:space="preserve">
+    <value>Gênero: </value>
+  </data>
+  <data name="label_release_colon" xml:space="preserve">
+    <value>Lançamento: </value>
+  </data>
+  <data name="label_see_more" xml:space="preserve">
+    <value>Ver mais</value>
+  </data>
+  <data name="msg_error_colon" xml:space="preserve">
+    <value>Erro: </value>
+  </data>
+  <data name="msg_without_connection" xml:space="preserve">
+    <value>Você está conectado à internet.</value>
+  </data>
   <data name="title_upcoming_movies" xml:space="preserve">
     <value>Proximos lançamentos!</value>
     <comment>First page title!</comment>

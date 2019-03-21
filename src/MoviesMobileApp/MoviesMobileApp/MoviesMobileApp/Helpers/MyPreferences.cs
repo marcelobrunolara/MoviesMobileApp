@@ -28,7 +28,7 @@ namespace MoviesMobileApp.Helpers
         private static string _posterImageSize = "poster_image_size";
         public static string PosterImageSize
         {
-            get => Preferences.Get(_posterImageSize, "w154");
+            get => Preferences.Get(_posterImageSize, "w185");
             set => Preferences.Set(_posterImageSize, value);
         }
 

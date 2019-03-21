@@ -37,8 +37,8 @@ namespace MoviesMobileApp.Services.MovieDb
 
                 var configurations = JsonConvert.DeserializeObject<ConfigurationModel>(result.Content);
 
-                MyPreferences.ImageBaseUrl = configurations.Images.BaseUrl;
-                MyPreferences.PosterImageSize = configurations.Images.PosterSizes?[1];
+                MyPreferences.ImageBaseUrl = configurations.Images.SecureBaseUrl;
+                MyPreferences.PosterImageSize = configurations.Images.PosterSizes?[2];
                 MyPreferences.BackdropImageSize = configurations.Images.BackdropSizes?[1];
 
                 return ResultHelper.MakeResponseContentMessage(true);

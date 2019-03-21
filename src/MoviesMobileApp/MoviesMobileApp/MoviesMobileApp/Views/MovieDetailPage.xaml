@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
     <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:i18n="clr-namespace:MoviesMobileApp.Helpers.Translate"
                  x:Class="MoviesMobileApp.Views.MovieDetailPage">
         <ContentPage.Content>
             <ScrollView>
@@ -15,30 +16,47 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
+                        
                         <Image Source="{Binding CurrentItem.PosterImageSource}"
                                Margin="10"
-                               Aspect="AspectFit"
+                               Aspect="AspectFill"
                                Grid.Column="0"
                                Grid.Row="0"/>
 
                         <StackLayout Grid.Column="1"
                                      Grid.Row="0"
                                      VerticalOptions="Center">
+                            
                             <Label Text="{Binding CurrentItem.Name}"
                                    FontSize="Large"
                                    FontAttributes="Bold"/>
+   
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontAttributes="Bold"
+                                                          Text="{i18n:Translate label_genre_colon}"/>
+                                    <Span Text="{Binding CurrentItem.Genre}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
-                            <Label Text="{Binding CurrentItem.Genre}"/>
+                        <Label Text="{Binding CurrentItem.Overview}"/>
 
-                            <Label Text="{Binding CurrentItem.Overview}"/>
-
-                            <Label Text="{Binding CurrentItem.ReleaseDate, StringFormat='{0:d}'}"/>
-                        </StackLayout>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontAttributes="Bold"
+                                                          Text="{i18n:Translate label_release_colon}"/>
+                                    <Span Text="{Binding CurrentItem.ReleaseDate, StringFormat='{0:d}'}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
                     </Grid>
-                    <Button Text="BACK"
+                    <Button Text="{i18n:Translate label_back}"
                             Command="{Binding CloseModalCommand}"
                             HorizontalOptions="FillAndExpand"
-                            TextColor="Black"
                             BackgroundColor="Orange"
                             CornerRadius="5"
                             />

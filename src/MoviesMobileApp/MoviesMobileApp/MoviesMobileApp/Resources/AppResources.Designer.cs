@@ -61,6 +61,60 @@ namespace MoviesMobileApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string label_back {
+            get {
+                return ResourceManager.GetString("label_back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: .
+        /// </summary>
+        internal static string label_error_colon {
+            get {
+                return ResourceManager.GetString("label_error_colon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genre: .
+        /// </summary>
+        internal static string label_genre_colon {
+            get {
+                return ResourceManager.GetString("label_genre_colon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Release: .
+        /// </summary>
+        internal static string label_release_colon {
+            get {
+                return ResourceManager.GetString("label_release_colon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See more.
+        /// </summary>
+        internal static string label_see_more {
+            get {
+                return ResourceManager.GetString("label_see_more", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device without internet connection..
+        /// </summary>
+        internal static string msg_without_connection {
+            get {
+                return ResourceManager.GetString("msg_without_connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upcoming movies!.
         /// </summary>
         internal static string title_upcoming_movies {

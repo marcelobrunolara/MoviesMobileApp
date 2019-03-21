@@ -32,8 +32,11 @@ namespace MoviesMobileApp.Services.MovieDb.Extensions
                 var backdropUrl = string.IsNullOrEmpty(movie.BackdropPath) ? ServicesResource.BackdropNotFoundURL :
                     string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.BackdropImageSize, movie.BackdropPath);
 
-                var posterUrl = string.IsNullOrEmpty(movie.PosterPath) ? ServicesResource.PosterNotFoundURL : 
-                    string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.PosterImageSize, movie.PosterPath);
+                string posterUrl;
+                if (string.IsNullOrEmpty(movie.PosterPath))
+                    posterUrl = ServicesResource.PosterNotFoundURL;
+                else
+                    posterUrl = string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.PosterImageSize, movie.PosterPath);
 
                 var genres = DataDictionaryHelper.Genre.GetSpecificValuesSeparatedByComma(movie.GenreIds);
 

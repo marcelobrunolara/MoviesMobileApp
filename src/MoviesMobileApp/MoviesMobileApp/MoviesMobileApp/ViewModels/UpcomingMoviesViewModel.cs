@@ -21,6 +21,8 @@ namespace MoviesMobileApp.ViewModels
         private string _warningMessage;
         private int _currentPage = 1;
         private bool _seeMoreButtonVisibility = false;
+        private bool _isDeviceOffline;
+        private bool _anErrorOcurred;
 
         private IMovieDbService _movieDbService;
         private MovieViewModel _currentItem;
@@ -47,6 +49,18 @@ namespace MoviesMobileApp.ViewModels
         {
             get => _seeMoreButtonVisibility;
             set => SetAndRaisePropertyChanged(ref _seeMoreButtonVisibility, value);
+        }
+
+        public bool IsDeviceOffline
+        {
+            get => _isDeviceOffline;
+            set => SetAndRaisePropertyChanged(ref _isDeviceOffline, value);
+        }
+
+        public bool AnErrorOcurred
+        {
+            get => _anErrorOcurred;
+            set => SetAndRaisePropertyChanged(ref _anErrorOcurred, value);
         }
 
         public override MovieViewModel CurrentItem
@@ -172,7 +186,8 @@ namespace MoviesMobileApp.ViewModels
 
         private void ShowInvalidResponseMessage(Result<MovieSearchResultViewModel> response)
         {
-            //throw new NotImplementedException();
+            WarningMessage = response.Message;
+            AnErrorOcurred = !response.IsValid;
         }
 
         #endregion
@@ -185,8 +200,10 @@ namespace MoviesMobileApp.ViewModels
 
         }
 
-        private void RefreshParameters()
+        private void RefreshPageProperties()
         {
+            WarningMessage = string.Empty;
+            AnErrorOcurred = false;
             CurrentPage = 1;
             Items = new ObservableCollection<MovieViewModel>();
             IsPullToRefreshBusy = false;
@@ -197,7 +214,7 @@ namespace MoviesMobileApp.ViewModels
         {
             get => _refreshUpcomingMoviesListCommand ?? (_refreshUpcomingMoviesListCommand = new Command(() =>
             {
-                RefreshParameters();
+                RefreshPageProperties();
                 LoadUpcomingMovies();
             }));
         }

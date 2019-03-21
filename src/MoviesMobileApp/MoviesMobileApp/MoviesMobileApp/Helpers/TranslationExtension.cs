@@ -4,7 +4,7 @@ using System.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MoviesMobileApp.Helpers
+namespace MoviesMobileApp.Helpers.Translate
 {
     [ContentProperty("Text")]
     public class TranslateExtension : IMarkupExtension
