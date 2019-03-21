@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MoviesMobileApp.Services.MovieDb.Models
 {
-    public class UpcomingMoviesModel
+    public class MovieSearchResultModel
     {
         [JsonProperty("results")]
         public List<MovieModel> Movies { get; set; }

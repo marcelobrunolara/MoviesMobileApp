@@ -16,13 +16,11 @@ namespace MoviesMobileApp.IoC
         {
             //Pages
             IoCHelper.Container.Register<IMovieDetailPage, MovieDetailPage>();
-            IoCHelper.Container.Register<IMovieSearchPage, MovieSearchPage>();
             IoCHelper.Container.Register<IUpcomingMoviesPage, UpcomingMoviesPage>();
 
             //ViewModels
             IoCHelper.Container.Register<IMovieDetailViewModel, MovieDetailViewModel>();
-            IoCHelper.Container.Register<IMovieSearchViewModel, MovieSearchViewModel>();
-            IoCHelper.Container.Register<IUpcomingMoviesListViewModel, UpcomingMoviesListViewModel>();
+            IoCHelper.Container.Register<IUpcomingMoviesViewModel, UpcomingMoviesViewModel>();
 
             //Services
             IoCHelper.Container.Register<IMovieDbService, MovieDbService>();

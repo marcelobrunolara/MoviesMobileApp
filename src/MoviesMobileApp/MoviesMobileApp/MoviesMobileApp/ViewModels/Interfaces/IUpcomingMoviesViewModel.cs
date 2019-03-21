@@ -2,7 +2,7 @@
 
 namespace MoviesMobileApp.ViewModels.Interfaces
 {
-    public interface IMovieSearchViewModel : IViewModel
+    public interface IUpcomingMoviesViewModel : IViewModel
     {
     }
 }

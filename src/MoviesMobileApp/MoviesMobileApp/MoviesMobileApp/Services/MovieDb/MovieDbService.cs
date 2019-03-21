@@ -26,56 +26,78 @@ namespace MoviesMobileApp.Services.MovieDb
 
         public async Task<Result<bool>> GetAndSetConfigurationOnPreferences()
         {
-            var url = URLHelper.MakeURL(ServicesResource.BaseURL, ServicesResource.Configurations, ServicesResource.API_KEY);
+            try
+            {
+                var url = URLHelper.MakeURL(ServicesResource.BaseURL, ServicesResource.Configurations, ServicesResource.API_KEY);
 
-            var result = await _connector.GetJson(url);
+                var result = await _connector.GetJson(url);
 
-            if (!result.IsValid)
-                return ResultHelper.MakeErrorMessage(result.HttpStatusCode, result.Message, false);
-                
-            var configurations = JsonConvert.DeserializeObject<ConfigurationModel>(result.Content);
+                if (!result.IsValid)
+                    return ResultHelper.MakeErrorMessage(result.HttpStatusCode, result.Message, false);
 
-            MyPreferences.ImageBaseUrl = configurations.Images.BaseUrl;
-            MyPreferences.PosterImageSize = configurations.Images.PosterSizes?[0];
-            MyPreferences.BackdropImageSize = configurations.Images.BackdropSizes?[0];
+                var configurations = JsonConvert.DeserializeObject<ConfigurationModel>(result.Content);
 
-            return ResultHelper.MakeResponseContentMessage(true);
+                MyPreferences.ImageBaseUrl = configurations.Images.BaseUrl;
+                MyPreferences.PosterImageSize = configurations.Images.PosterSizes?[1];
+                MyPreferences.BackdropImageSize = configurations.Images.BackdropSizes?[1];
+
+                return ResultHelper.MakeResponseContentMessage(true);
+            }
+            catch (Exception e)
+            {
+                return ResultHelper.MakeExceptionMessage<bool>(e);
+            }
         }
 
         public async Task<Result<bool>> GetAndStoreGenres()
         {
-            var url = URLHelper.MakeURL(ServicesResource.BaseURL, ServicesResource.Genre, ServicesResource.API_KEY, MyPreferences.LanguageInfo);
+            try
+            {
+                var url = URLHelper.MakeURL(ServicesResource.BaseURL, ServicesResource.Genre, ServicesResource.API_KEY, MyPreferences.LanguageInfo);
 
-            var result = await _connector.GetJson(url);
+                var result = await _connector.GetJson(url);
 
-            if (!result.IsValid)
-                return ResultHelper.MakeErrorMessage(result.HttpStatusCode, result.Message, false);
+                if (!result.IsValid)
+                    return ResultHelper.MakeErrorMessage(result.HttpStatusCode, result.Message, false);
 
-            var genreList = JsonConvert.DeserializeObject<List<GenreModel>>(result.Content);
-            var dataDictionaryList = genreList.ToList<IDataDictionary>();
+                var movieGenres = JsonConvert.DeserializeObject<MovieGenresModel>(result.Content);
+                var dataDictionaryList = movieGenres.Genre.ToList<IDataDictionary>();
 
-            DataDictionaryHelper.Genre.Save(dataDictionaryList);
+                DataDictionaryHelper.Genre.Save(dataDictionaryList);
 
-            return ResultHelper.MakeResponseContentMessage(true);
+                return ResultHelper.MakeResponseContentMessage(true);
+            }
+            catch (Exception e)
+            {
+                return ResultHelper.MakeExceptionMessage<bool>(e);
+            }
         }
 
-        public async Task<Result<UpcomingMoviesViewModel>> GetUpcomingMovies(int? pageNumber = null)
+        public async Task<Result<MovieSearchResultViewModel>> GetUpcomingMovies(int? pageNumber = null)
         {
-            var thisPageNumber = pageNumber ?? 1;
+            var _pageNumber = pageNumber ?? 1;
 
-            var url = URLHelper.MakeURL(ServicesResource.BaseURL, ServicesResource.Upcoming,
-                        ServicesResource.API_KEY, thisPageNumber, MyPreferences.LanguageInfo, MyPreferences.RegionInfo);
+                        try
+            {
+                var url = URLHelper.MakeURL(ServicesResource.BaseURL, 
+                                            ServicesResource.Upcoming, ServicesResource.API_KEY, 
+                                            _pageNumber, MyPreferences.LanguageInfo, 
+                                            MyPreferences.RegionInfo);
 
-            var result = await _connector.GetJson(url);
+                var result = await _connector.GetJson(url);
 
-            if (!result.IsValid)
-                return ResultHelper.MakeErrorMessage(result.HttpStatusCode, result.Message, default(UpcomingMoviesViewModel));
+                if (!result.IsValid)
+                    return ResultHelper.MakeErrorMessage(result.HttpStatusCode, result.Message, default(MovieSearchResultViewModel));
 
-            var upcomingMoviesModel = JsonConvert.DeserializeObject<UpcomingMoviesModel>(result.Content);
+                var movieSearchResultModel = JsonConvert.DeserializeObject<MovieSearchResultModel>(result.Content);
+                var movieSearchResultViewModel = movieSearchResultModel.ToViewModel();
 
-            var upcomingMovieViewModel = upcomingMoviesModel.ToViewModel();
-
-            return ResultHelper.MakeResponseContentMessage(upcomingMovieViewModel);
+                return ResultHelper.MakeResponseContentMessage(movieSearchResultViewModel);
+            }
+            catch (Exception e)
+            {
+                return ResultHelper.MakeExceptionMessage<MovieSearchResultViewModel>(e);
+            }
         }
 
         public Task<Result<MovieViewModel>> GetMovieDetail(int movieId)

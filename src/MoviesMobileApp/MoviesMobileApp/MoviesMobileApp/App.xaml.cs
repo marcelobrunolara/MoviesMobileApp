@@ -18,7 +18,7 @@ namespace MoviesMobileApp
 
             IoCContainer.RegisterDependencies();
 
-            var firstPage = PageHelper.CreateMainPage<IUpcomingMoviesPage, IUpcomingMoviesListViewModel>();
+            var firstPage = PageHelper.CreateMainPage<IUpcomingMoviesPage, IUpcomingMoviesViewModel>();
             MainPage = new NavigationPage(firstPage as Page);
         }
 
@@ -34,8 +34,8 @@ namespace MoviesMobileApp
 
         private void GetDeviceLanguageAndRegion()
         {
-            MyPreferences.LanguageInfo = System.Globalization.CultureInfo.CurrentCulture.Name;
-            MyPreferences.RegionInfo = System.Globalization.RegionInfo.CurrentRegion.TwoLetterISORegionName;
+            MyPreferences.LanguageInfo ="en-US";
+            MyPreferences.RegionInfo = "US";
         }
 
     }

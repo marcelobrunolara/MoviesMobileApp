@@ -5,7 +5,7 @@ namespace MoviesMobileApp.Services.MovieDb
 {
     public abstract class DataDictionaryBase
     {
-        private  Dictionary<int, string> _dataDictionary { get; set; }
+        private Dictionary<int, string> _dataDictionary { get; set; } = new Dictionary<int, string>();
 
         public virtual void Save(IList<IDataDictionary> modelList)
         {
@@ -35,18 +35,14 @@ namespace MoviesMobileApp.Services.MovieDb
             return string.Join(",", _dataDictionary.Select(c => c.Value));
         }
 
-        public virtual string GetSpecificValuesSeparatedByComma(List<int> keyList)
+        public virtual string GetSpecificValuesSeparatedByComma(IList<int> keys)
         {
             if (_dataDictionary is null)
                 return string.Empty;
 
-            string genreString = string.Empty;
+            IList<string> valuesString = keys.Where(k => _dataDictionary.ContainsKey(k)).Select(k => _dataDictionary[k]).ToList();
 
-            foreach (var key in keyList)
-                genreString = string.Join(",",genreString, GetValue(key));
-
-
-            return genreString;
+            return string.Join(", ", valuesString);
         }
     }
 }

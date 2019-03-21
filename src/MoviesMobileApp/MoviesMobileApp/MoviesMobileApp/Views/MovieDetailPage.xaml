@@ -1,12 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MoviesMobileApp.Views.MovieDetailPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="MoviesMobileApp.Views.MovieDetailPage">
+        <ContentPage.Content>
+            <ScrollView>
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand" 
+                             Padding="20">
+                
+                    <Image Source="{Binding CurrentItem.BackdropImageSource}"
+                           Aspect="AspectFill"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding CurrentItem.PosterImageSource}"
+                               Margin="10"
+                               Aspect="AspectFit"
+                               Grid.Column="0"
+                               Grid.Row="0"/>
+
+                        <StackLayout Grid.Column="1"
+                                     Grid.Row="0"
+                                     VerticalOptions="Center">
+                            <Label Text="{Binding CurrentItem.Name}"
+                                   FontSize="Large"
+                                   FontAttributes="Bold"/>
+
+                            <Label Text="{Binding CurrentItem.Genre}"/>
+
+                            <Label Text="{Binding CurrentItem.Overview}"/>
+
+                            <Label Text="{Binding CurrentItem.ReleaseDate, StringFormat='{0:d}'}"/>
+                        </StackLayout>
+                    </Grid>
+                    <Button Text="BACK"
+                            Command="{Binding CloseModalCommand}"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="Black"
+                            BackgroundColor="Orange"
+                            CornerRadius="5"
+                            />
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>

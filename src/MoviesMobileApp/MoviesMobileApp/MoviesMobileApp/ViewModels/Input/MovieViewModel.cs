@@ -13,15 +13,23 @@ namespace MoviesMobileApp.ViewModels.Input
         public string ProductionCompany { get; set; }
         public string Overview {get;set;}
         public DateTime ReleaseDate { get; set; }
-
-        public UriImageSource PosterImage
+        public UriImageSource BackdropImageSource
+        {
+            get => new UriImageSource
+            {
+                Uri = new Uri(BackdropUrl),
+                CachingEnabled = true,
+                CacheValidity = TimeSpan.FromDays(1)
+            };
+        }
+        public UriImageSource PosterImageSource
         {
             get => new UriImageSource
             {
                 Uri = new Uri(PosterUrl),
                 CachingEnabled = true,
-                CacheValidity = TimeSpan.FromDays(5)
+                CacheValidity = TimeSpan.FromDays(1)
             };
-       }
+        }
     }
 }

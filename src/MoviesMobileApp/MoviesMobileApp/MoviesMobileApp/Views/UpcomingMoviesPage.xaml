@@ -1,42 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MoviesMobileApp.Views.UpcomingMoviesPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView
-                ItemsSource="{Binding Items}">
-                <ListView.Header>
-                    <StackLayout>
-                        <ActivityIndicator IsRunning="{Binding IsBusy}"/>
-                    </StackLayout>
-                </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:cc="clr-namespace:MoviesMobileApp.Views.Controls"
+                 xmlns:i18n="clr-namespace:MoviesMobileApp.Helpers"
+                 x:Class="MoviesMobileApp.Views.UpcomingMoviesPage"
+                 Title="{i18n:Translate title_upcoming_movies}">
+        <ContentPage.Content>
+            <AbsoluteLayout>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                          AbsoluteLayout.LayoutFlags="All">
+                <ListView
+                        x:Name="lstUpcoming"
+                        ItemsSource="{Binding Items}"
+                        SelectedItem="{Binding CurrentItem}"
+                        CachingStrategy="RecycleElementAndDataTemplate"
+                        HasUnevenRows="True"
+                        RefreshCommand="{Binding RefreshUpcomingMoviesListCommand}"
+                        IsPullToRefreshEnabled="True"
+                        IsRefreshing="{Binding IsPullToRefreshBusy}"
+                    >
+                    <ListView.Header>
+                        <StackLayout Padding="10">
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="{Binding PosterImage}"
-                                       Grid.Column="0"
-                                       Grid.Row="0"
-                                       Grid.RowSpan="3"/>
+                                    <Image Source="{Binding PosterImageSource}"
+                                           Margin="10"
+                                           Aspect="AspectFill"
+                                           Grid.Column="0"
+                                           Grid.Row="0"/>
 
-                                <Label Text="{Binding Name}"/>
-                                <Label Text="{Binding Genre}"/>
-                                <Label Text="{Binding CreationDate, StringFormat='{0:d}'}" />
-
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.Footer>
-                    <Label Text="{Binding ConnectionWarning}" />
-                </ListView.Footer>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+                                    <StackLayout Grid.Column="1"
+                                                 Grid.Row="0"
+                                                 VerticalOptions="Center">
+                                        <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Genre}"/>
+                                        <Label Text="{Binding ReleaseDate, StringFormat='{0:d}'}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <StackLayout Padding="10">
+                            
+                            <Label Text="{Binding WarningMessage}" 
+                                   IsVisible="{Binding IsDeviceOffline}"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"/>
+                            
+                            <Button Text="LOAD MORE"
+                                    Command="{Binding UpcomingMoviesNextPageCommand}"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="Black"
+                                    BackgroundColor="Orange"
+                                    IsVisible="{Binding SeeMoreButtonVisibility}"
+                                    CornerRadius="5"/>
+                        </StackLayout>
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+            <cc:CustomActivityIndicator IsVisible="{Binding IsBusy}"/>
+        </AbsoluteLayout>
+        </ContentPage.Content>
+    </ContentPage>
