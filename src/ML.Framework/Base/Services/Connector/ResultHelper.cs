@@ -6,7 +6,7 @@ namespace ML.Framework.Base.Services.Connector
 {
     public class ResultHelper
     {
-        public static Result<T> MakeErrorMessage<T>(HttpStatusCode errorCode, string reason, T errorContent) 
+        public static Result<T> MakeErrorMessage<T>(int errorCode, string reason, T errorContent) 
         {
             string mensagem = string.Join("-", (int)errorCode, reason);
             return Result<T>.Create(false, mensagem, errorContent, (int)errorCode);

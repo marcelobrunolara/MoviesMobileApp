@@ -1,6 +1,7 @@
 ﻿using ML.Framework.Base.IoC;
 using ML.Framework.Base.MVVM.Input;
 using ML.Framework.Base.MVVM.Interface;
+using ML.Framework.Base.Services.Models;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -51,25 +52,6 @@ namespace ML.Framework.Base.MVVM
         public virtual void ExecuteBeforeBinding()
         {
 
-        }
-
-        public async Task<TResult> ExecuteWithLoading<TResult> (Task<TResult> task) 
-            where TResult : new()
-        {
-            IsBusy = true;
-            TResult result = default(TResult);
-
-            return await Task.Run(async () =>
-            {
-                result = await task;
-
-            }).ContinueWith(t=>
-            {
-                if (t.IsCompleted)
-                    IsBusy = false;
-
-                return result;
-            });
         }
 
         #endregion

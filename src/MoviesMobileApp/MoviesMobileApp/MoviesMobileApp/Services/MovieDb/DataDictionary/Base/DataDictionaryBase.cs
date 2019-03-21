@@ -5,9 +5,9 @@ namespace MoviesMobileApp.Services.MovieDb
 {
     public abstract class DataDictionaryBase
     {
-        private static Dictionary<int, string> _dataDictionary { get; set; }
+        private  Dictionary<int, string> _dataDictionary { get; set; }
 
-        public static void Save(IList<IDataDictionary> modelList)
+        public virtual void Save(IList<IDataDictionary> modelList)
         {
             if (modelList is null)
                 return;
@@ -16,7 +16,7 @@ namespace MoviesMobileApp.Services.MovieDb
                 _dataDictionary.Add(model.Id, model.Name);
         }
 
-        public static string GetValue(int key)
+        public virtual string GetValue(int key)
         {
             if (_dataDictionary is null)
                 return string.Empty;
@@ -27,7 +27,7 @@ namespace MoviesMobileApp.Services.MovieDb
             return value;
         }
 
-        public static string GetAllValuesSeparatedByComma()
+        public virtual string GetAllValuesSeparatedByComma()
         {
             if (_dataDictionary is null)
                 return string.Empty;

@@ -71,3 +71,6 @@ fastlane/readme.md
 /src/MoviesMobileApp/.vs/MoviesMobileApp/v15/Server/sqlite3
 /.vs
 /src/MoviesMobileApp/.vs/MoviesMobileApp/v15
+/src/MoviesMobileApp/TMDb.Test/TMDb.Test/obj/Debug/netcoreapp2.1/TMDb.Test.dll
+/src/MoviesMobileApp/TMDb.Test/TMDb.Test/obj/Debug/netcoreapp2.1/TMDb.Test.pdb
+/src/MoviesMobileApp/TMDb.Test/TMDb.Test/obj/Debug/netcoreapp2.1/TMDb.Test.csproj.CopyComplete

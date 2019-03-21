@@ -2,15 +2,16 @@
 using MoviesMobileApp.Services.MovieDb.Models;
 using MoviesMobileApp.ViewModels.Input;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MoviesMobileApp.Services.MovieDb.Interface
 {
     public interface IMovieDbService
     {
-        IList<Result<MovieViewModel>> GetUpcomingMovies(int? pageNumber = null);
-        IList<Result<MovieViewModel>> SearchSpecific(string movieName, int? pageNumber=null);
-        Result<MovieViewModel> GetMovieDetail(int movieId);
-        Result<ImagesConfigurationModel> ConfigurationModel();
-        Result<ImagesConfigurationModel> GetGenre(int movieId);
+        Task<IList<Result<MovieViewModel>>> GetUpcomingMovies(int? pageNumber = null);
+        Task<IList<Result<MovieViewModel>>> SearchSpecific(string movieName, int? pageNumber=null);
+        Task<Result<MovieViewModel>> GetMovieDetail(int movieId);
+        Task<Result<bool>> GetAndSetConfigurationOnPreferences();
+        Task<Result<bool>> GetAndStoreGenres();
     }
 }

@@ -23,6 +23,12 @@ namespace ML.Framework.Base.Services.Models
             Content = content;
         }
 
+        public Result(bool isValid, string message)
+        {
+            IsValid = isValid;
+            Message = message;
+        }
+
         public static Result<T> Create(bool isValid, string message, T content, int httpStatusCode)
         {
             return new Result<T>(isValid, message, content, httpStatusCode);
@@ -31,6 +37,11 @@ namespace ML.Framework.Base.Services.Models
         public static Result<T> Create(bool isValid, string message, T content)
         {
             return new Result<T>(isValid, message, content);
+        }
+
+        public static Result<T> Create(bool isValid, string message)
+        {
+            return new Result<T>(isValid, message);
         }
     }
 }

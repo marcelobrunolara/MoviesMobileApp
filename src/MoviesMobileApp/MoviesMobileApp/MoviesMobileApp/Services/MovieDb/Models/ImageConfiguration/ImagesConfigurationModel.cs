@@ -17,7 +17,7 @@ namespace MoviesMobileApp.Services.MovieDb.Models
 
 
         [JsonProperty("poster_sizes")]
-        public List<string> POsterSizes { get; set; }
+        public List<string> PosterSizes { get; set; }
 
     }
 }

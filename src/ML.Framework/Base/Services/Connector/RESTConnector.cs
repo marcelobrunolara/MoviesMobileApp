@@ -31,9 +31,9 @@ namespace ML.Framework.Base.Services.Connector
                 var responseContent = await response.Content.ReadAsStringAsync();
 
                 if (!response.IsSuccessStatusCode)
-                    return ResultHelper.MakeErrorMessage<string>(response.StatusCode, response.ReasonPhrase, responseContent);
+                    return ResultHelper.MakeErrorMessage((int)response.StatusCode, response.ReasonPhrase, responseContent);
 
-                return ResultHelper.MakeResponseContentMessage<string>(responseContent);
+                return ResultHelper.MakeResponseContentMessage(responseContent);
             }
             catch (Exception e)
             {
@@ -51,9 +51,9 @@ namespace ML.Framework.Base.Services.Connector
                 var responseContent = await response.Content.ReadAsStringAsync();
 
                 if (!response.IsSuccessStatusCode)
-                    return ResultHelper.MakeErrorMessage<string>(response.StatusCode, response.ReasonPhrase, responseContent);
+                    return ResultHelper.MakeErrorMessage((int)response.StatusCode, response.ReasonPhrase, responseContent);
 
-                return ResultHelper.MakeResponseContentMessage<string>(responseContent);
+                return ResultHelper.MakeResponseContentMessage(responseContent);
             }
             catch (Exception e)
             {

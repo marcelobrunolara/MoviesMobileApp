@@ -4,8 +4,7 @@ using System.Text;
 
 namespace MoviesMobileApp.Services.MovieDb
 {
-    public class MovieGenreDataDictionary : DataDictionaryBase
+    class Resources
     {
-
     }
 }

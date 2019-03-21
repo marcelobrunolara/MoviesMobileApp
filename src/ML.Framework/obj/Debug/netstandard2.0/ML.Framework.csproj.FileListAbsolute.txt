@@ -18,7 +18,6 @@ D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.cs
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.csproj.CoreCompileInputs.cache
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.AssemblyInfoInputs.cache
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.AssemblyInfo.cs
-D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\XamlC.stamp
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.dll
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.pdb
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.Base.Services.Resources.ServiceInternalMessages.resources
@@ -49,3 +48,4 @@ D:\Source\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Source\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.dll
 D:\Source\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.pdb
 D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\ML.Framework.csprojAssemblyReference.cache
+D:\GIT\MoviesMobileApp\src\ML.Framework\obj\Debug\netstandard2.0\XamlC.stamp
