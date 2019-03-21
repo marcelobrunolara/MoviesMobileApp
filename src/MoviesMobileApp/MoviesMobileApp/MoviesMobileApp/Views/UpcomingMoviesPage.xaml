@@ -4,9 +4,38 @@
              x:Class="MoviesMobileApp.Views.UpcomingMoviesPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView>
+                <ListView.Header>
+                    <StackLayout>
+                        <ActivityIndicator IsVisible="{Binding IsBusy}"/>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding PosterImage}"
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       Grid.RowSpan="3"/>
+
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Genre}"/>
+                                <Label Text="{Binding CreationDate, StringFormat='{0:d}'}" />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Label Text="{Binding ConnectionWarning}" />
+                </ListView.Footer>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

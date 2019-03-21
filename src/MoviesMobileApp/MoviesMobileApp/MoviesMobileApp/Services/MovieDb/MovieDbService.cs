@@ -3,6 +3,7 @@ using ML.Framework.Base.Services.Connector.Interface;
 using ML.Framework.Base.Services.Models;
 using MoviesMobileApp.Helpers;
 using MoviesMobileApp.Services.MovieDb.DataDictionary.Helpers;
+using MoviesMobileApp.Services.MovieDb.Extensions;
 using MoviesMobileApp.Services.MovieDb.Interface;
 using MoviesMobileApp.Services.MovieDb.Models;
 using MoviesMobileApp.ViewModels.Input;
@@ -58,12 +59,26 @@ namespace MoviesMobileApp.Services.MovieDb
             return ResultHelper.MakeResponseContentMessage(true);
         }
 
-        public Task<Result<MovieViewModel>> GetMovieDetail(int movieId)
+        public async Task<Result<UpcomingMoviesViewModel>> GetUpcomingMovies(int? pageNumber = null)
         {
-            throw new NotImplementedException();
+            var thisPageNumber = pageNumber ?? 0;
+
+            var urlQuery = string.Join(ServicesResource.API_KEY, thisPageNumber, MyPreferences.LanguageInfo, MyPreferences.RegionInfo);
+            var url = URLHelper.MakeURL(ServicesResource.BaseURL, ServicesResource.Upcoming, urlQuery);
+
+            var result = await _connector.GetJson(url);
+
+            if (!result.IsValid)
+                return ResultHelper.MakeErrorMessage(result.HttpStatusCode, result.Message, default(UpcomingMoviesViewModel));
+
+            var upcomingMoviesModel = JsonConvert.DeserializeObject<UpcomingMoviesModel>(result.Content);
+
+            var upcomingMovieViewModel = upcomingMoviesModel.ToViewModel();
+
+            return ResultHelper.MakeResponseContentMessage(upcomingMovieViewModel);
         }
 
-        public Task<IList<Result<MovieViewModel>>> GetUpcomingMovies(int? pageNumber = null)
+        public Task<Result<MovieViewModel>> GetMovieDetail(int movieId)
         {
             throw new NotImplementedException();
         }

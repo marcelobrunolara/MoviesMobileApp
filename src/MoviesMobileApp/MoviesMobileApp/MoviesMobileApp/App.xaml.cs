@@ -18,7 +18,7 @@ namespace MoviesMobileApp
 
             IoCContainer.RegisterDependencies();
 
-            var firstPage = PageHelper.CreateMainPage<IUpcomingMoviesPage, IUpcomingMoviesViewModel>();
+            var firstPage = PageHelper.CreateMainPage<IUpcomingMoviesPage, IUpcomingMoviesListViewModel>();
             MainPage = new NavigationPage(firstPage as Page);
         }
 

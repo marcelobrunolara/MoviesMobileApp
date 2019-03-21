@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MoviesMobileApp.Services.MovieDb.Models
@@ -45,6 +46,6 @@ namespace MoviesMobileApp.Services.MovieDb.Models
         public string Overview { get; set; }
 
         [JsonProperty("release_date")]
-        public string ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
     }
 }

@@ -34,5 +34,19 @@ namespace MoviesMobileApp.Services.MovieDb
 
             return string.Join(",", _dataDictionary.Select(c => c.Value));
         }
+
+        public virtual string GetSpecificValuesSeparatedByComma(List<int> keyList)
+        {
+            if (_dataDictionary is null)
+                return string.Empty;
+
+            string genreString = string.Empty;
+
+            foreach (var key in keyList)
+                genreString = string.Join(",",genreString, GetValue(key));
+
+
+            return genreString;
+        }
     }
 }

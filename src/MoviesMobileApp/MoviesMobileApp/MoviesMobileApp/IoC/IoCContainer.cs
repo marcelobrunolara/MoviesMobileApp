@@ -22,7 +22,7 @@ namespace MoviesMobileApp.IoC
             //ViewModels
             IoCHelper.Container.Register<IMovieDetailViewModel, MovieDetailViewModel>();
             IoCHelper.Container.Register<IMovieSearchViewModel, MovieSearchViewModel>();
-            IoCHelper.Container.Register<IUpcomingMoviesViewModel, UpcomingMoviesViewModel>();
+            IoCHelper.Container.Register<IUpcomingMoviesListViewModel, UpcomingMoviesListViewModel>();
 
             //Services
             IoCHelper.Container.Register<IMovieDbService, MovieDbService>();

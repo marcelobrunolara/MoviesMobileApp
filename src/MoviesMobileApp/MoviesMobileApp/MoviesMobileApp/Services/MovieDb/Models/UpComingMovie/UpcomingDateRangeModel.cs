@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace MoviesMobileApp.Services.MovieDb.Models
 {
     public class UpcomingMoviesDateRange
     {
         [JsonProperty("maximum")]
-        public string Maximum { get; set; }
+        public DateTime Maximum { get; set; }
 
         [JsonProperty("minimum")]
-        public string Minimum { get; set; }
+        public DateTime Minimum { get; set; }
     }
 }
