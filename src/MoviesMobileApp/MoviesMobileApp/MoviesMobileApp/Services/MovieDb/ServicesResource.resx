@@ -120,6 +120,9 @@
   <data name="API_KEY" xml:space="preserve">
     <value>1f54bd990f1cdfb230adb312546d765d</value>
   </data>
+  <data name="BackdropNotFoundURL" xml:space="preserve">
+    <value>https://raw.githubusercontent.com/marcelobrunolara/MoviesMobileApp/development/src/Images/backdropnotfound.jpg</value>
+  </data>
   <data name="BaseURL" xml:space="preserve">
     <value>https://api.themoviedb.org/3/</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="MovieSearch" xml:space="preserve">
     <value>search/movie?api_key={0}&amp;query={1}&amp;page={2}&amp;language={3}&amp;region={4}</value>
+  </data>
+  <data name="PosterNotFoundURL" xml:space="preserve">
+    <value>https://raw.githubusercontent.com/marcelobrunolara/MoviesMobileApp/development/src/Images/posternotfound.jpg</value>
   </data>
   <data name="Upcoming" xml:space="preserve">
     <value>movie/upcoming?api_key={0}&amp;page={1}&amp;language={2}&amp;region={3}</value>

@@ -70,6 +70,15 @@ namespace MoviesMobileApp.Services.MovieDb {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/marcelobrunolara/MoviesMobileApp/development/src/Images/backdropnotfound.jpg.
+        /// </summary>
+        internal static string BackdropNotFoundURL {
+            get {
+                return ResourceManager.GetString("BackdropNotFoundURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://api.themoviedb.org/3/.
         /// </summary>
         internal static string BaseURL {
@@ -111,6 +120,15 @@ namespace MoviesMobileApp.Services.MovieDb {
         internal static string MovieSearch {
             get {
                 return ResourceManager.GetString("MovieSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/marcelobrunolara/MoviesMobileApp/development/src/Images/posternotfound.jpg.
+        /// </summary>
+        internal static string PosterNotFoundURL {
+            get {
+                return ResourceManager.GetString("PosterNotFoundURL", resourceCulture);
             }
         }
         

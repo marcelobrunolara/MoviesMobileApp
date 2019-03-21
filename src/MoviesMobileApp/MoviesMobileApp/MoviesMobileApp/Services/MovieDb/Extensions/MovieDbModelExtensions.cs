@@ -29,8 +29,12 @@ namespace MoviesMobileApp.Services.MovieDb.Extensions
 
             foreach(var movie in model.Movies)
             {
-                var backdropUrl = string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.BackdropImageSize, movie.BackdropPath);
-                var posterUrl = string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.PosterImageSize, movie.PosterPath);
+                var backdropUrl = string.IsNullOrEmpty(movie.BackdropPath) ? ServicesResource.BackdropNotFoundURL :
+                    string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.BackdropImageSize, movie.BackdropPath);
+
+                var posterUrl = string.IsNullOrEmpty(movie.PosterPath) ? ServicesResource.PosterNotFoundURL : 
+                    string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.PosterImageSize, movie.PosterPath);
+
                 var genres = DataDictionaryHelper.Genre.GetSpecificValuesSeparatedByComma(movie.GenreIds);
 
                 var movieViewModel = new MovieViewModel()
