@@ -4,7 +4,8 @@
              x:Class="MoviesMobileApp.Views.UpcomingMoviesPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView>
+            <ListView
+                ItemsSource="{Binding Items}">
                 <ListView.Header>
                     <StackLayout>
                         <ActivityIndicator IsRunning="{Binding IsBusy}"/>

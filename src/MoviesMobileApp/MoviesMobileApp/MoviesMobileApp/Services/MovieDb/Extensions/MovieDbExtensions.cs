@@ -28,7 +28,7 @@ namespace MoviesMobileApp.Services.MovieDb.Extensions
 
             foreach(var movie in model.Movies)
             {
-                var genre = DataDictionaryHelper.Genre.GetSpecificValuesSeparatedByComma(movie.GenreIds);
+                var genre = string.Empty; // DataDictionaryHelper.Genre.GetSpecificValuesSeparatedByComma(movie.GenreIds);
                 var backdropUrl = string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.BackdropImageSize, movie.BackdropPath);
                 var posterUrl = string.Concat(MyPreferences.ImageBaseUrl, MyPreferences.PosterImageSize, movie.PosterPath);
 

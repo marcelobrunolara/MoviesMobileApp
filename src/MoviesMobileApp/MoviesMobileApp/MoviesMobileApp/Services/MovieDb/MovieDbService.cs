@@ -51,7 +51,7 @@ namespace MoviesMobileApp.Services.MovieDb
             if (!result.IsValid)
                 return ResultHelper.MakeErrorMessage(result.HttpStatusCode, result.Message, false);
 
-            var genreList = JsonConvert.DeserializeObject<IList<GenreModel>>(result.Content);
+            var genreList = JsonConvert.DeserializeObject<List<GenreModel>>(result.Content);
             var dataDictionaryList = genreList.ToList<IDataDictionary>();
 
             DataDictionaryHelper.Genre.Save(dataDictionaryList);
@@ -61,10 +61,10 @@ namespace MoviesMobileApp.Services.MovieDb
 
         public async Task<Result<UpcomingMoviesViewModel>> GetUpcomingMovies(int? pageNumber = null)
         {
-            var thisPageNumber = pageNumber ?? 0;
+            var thisPageNumber = pageNumber ?? 1;
 
-            var urlQuery = string.Join(ServicesResource.API_KEY, thisPageNumber, MyPreferences.LanguageInfo, MyPreferences.RegionInfo);
-            var url = URLHelper.MakeURL(ServicesResource.BaseURL, ServicesResource.Upcoming, urlQuery);
+            var url = URLHelper.MakeURL(ServicesResource.BaseURL, ServicesResource.Upcoming,
+                        ServicesResource.API_KEY, thisPageNumber, MyPreferences.LanguageInfo, MyPreferences.RegionInfo);
 
             var result = await _connector.GetJson(url);
 

@@ -32,7 +32,7 @@ namespace MoviesMobileApp.Helpers
             set => Preferences.Set(_posterImageSize, value);
         }
 
-        private static string _backdropImageSize = "image_base_url";
+        private static string _backdropImageSize = "backdrop_image_size";
         public static string BackdropImageSize
         {
             get => Preferences.Get(_backdropImageSize, "w780");
