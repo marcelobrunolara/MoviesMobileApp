@@ -40,16 +40,20 @@ namespace MoviesMobileApp.ViewModels
                 return;
             }
 
+            UpcomingMoviesViewModel viewModel = default(UpcomingMoviesViewModel);
+
             IsBusy = true;
 
             Task.Run(async () =>
             {
                 await _movieDbService.GetAndSetConfigurationOnPreferences();
                 await _movieDbService.GetAndStoreGenres();
-            }).ContinueWith(c=>
-            {
-                if (c.IsCompleted)
-                    IsBusy = false;
+
+                var response = await _movieDbService.GetUpcomingMovies();
+
+                if (response.IsValid)
+                    viewModel = response.Content;
+
             });
         }
 

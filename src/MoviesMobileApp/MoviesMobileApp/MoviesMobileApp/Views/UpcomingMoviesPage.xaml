@@ -7,7 +7,7 @@
             <ListView>
                 <ListView.Header>
                     <StackLayout>
-                        <ActivityIndicator IsVisible="{Binding IsBusy}"/>
+                        <ActivityIndicator IsRunning="{Binding IsBusy}"/>
                     </StackLayout>
                 </ListView.Header>
                 <ListView.ItemTemplate>
