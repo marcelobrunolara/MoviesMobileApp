@@ -117,9 +117,9 @@ namespace MoviesMobileApp.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Device without internet connection..
         /// </summary>
-        internal static string msg_without_connection {
+        internal static string label_without_connection {
             get {
-                return ResourceManager.GetString("msg_without_connection", resourceCulture);
+                return ResourceManager.GetString("label_without_connection", resourceCulture);
             }
         }
         

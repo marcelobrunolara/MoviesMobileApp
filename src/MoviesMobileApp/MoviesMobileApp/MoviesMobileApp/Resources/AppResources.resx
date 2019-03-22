@@ -135,7 +135,7 @@
   <data name="label_see_more" xml:space="preserve">
     <value>See more</value>
   </data>
-  <data name="msg_without_connection" xml:space="preserve">
+  <data name="label_without_connection" xml:space="preserve">
     <value>Device without internet connection.</value>
   </data>
   <data name="title_upcoming_movies" xml:space="preserve">
