@@ -3,7 +3,7 @@
 
 A Xamarin.Forms application to follow up all everything about movies!
 
-At this very first version you can check all upcoming movies.
+At this very first version you can check all upcoming movies with device localization support.
 
 About next steps (or application roadmap) we can consider:
 
@@ -27,7 +27,8 @@ Currently in beta version it will be made avaliable at nuget and github soon.
 Internal Features Already Included:
   - IoC Container Support using Simple Injector;
   - Simple Api REST connectors to get and post json with friendly respose pattern;
-  - MVVM support page decoupling and View Model (helpfull ViewModelBase).
+  - MVVM support page decoupling and View Model (helpfull ViewModelBase);
+  - Page navigation through PageProxy object.
   
 
 ### Plugins
