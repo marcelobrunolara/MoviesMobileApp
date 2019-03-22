@@ -89,7 +89,6 @@ namespace MoviesMobileApp.ViewModels
 
         #endregion
 
-
         #region Methods
         private void DefineAndNavigateToMovieDetail(MovieViewModel value)
         {
@@ -102,16 +101,31 @@ namespace MoviesMobileApp.ViewModels
 
         public override void ExecuteBeforeBinding()
         {
+            LoadAplicationData();
+        }
+
+        private void LoadAplicationData()
+        {
             if (CheckAndSetIfItsNotConnected())
                 return;
 
-            LoadConfigurationAndGenreList();
+            if(BasicDataNotDownloaded())
+                LoadConfigurationAndGenreList();
+
             LoadUpcomingMovies();
         }
 
         private bool CheckAndSetIfItsNotConnected()
         {
             return IsDeviceOffline = Connectivity.NetworkAccess != NetworkAccess.Internet;
+        }
+
+        private bool BasicDataNotDownloaded()
+        {
+            if (_cachedInformationIsOk is null)
+                return true;
+
+            return !_cachedInformationIsOk.IsValid;
         }
 
         private void LoadConfigurationAndGenreList()
@@ -200,6 +214,16 @@ namespace MoviesMobileApp.ViewModels
             WarningMessage = response.Message;
             AnErrorOcurred = !response.IsValid;
         }
+        
+        private void RefreshPageProperties()
+        {
+            WarningMessage = string.Empty;
+            AnErrorOcurred = false;
+            CurrentPage = 1;
+            Items = new ObservableCollection<MovieViewModel>();
+            IsPullToRefreshBusy = false;
+            SeeMoreButtonVisibility = false;
+        }
 
         #endregion
 
@@ -211,22 +235,12 @@ namespace MoviesMobileApp.ViewModels
 
         }
 
-        private void RefreshPageProperties()
-        {
-            WarningMessage = string.Empty;
-            AnErrorOcurred = false;
-            CurrentPage = 1;
-            Items = new ObservableCollection<MovieViewModel>();
-            IsPullToRefreshBusy = false;
-            SeeMoreButtonVisibility = false;
-        }
-
         public ICommand RefreshUpcomingMoviesListCommand
         {
             get => _refreshUpcomingMoviesListCommand ?? (_refreshUpcomingMoviesListCommand = new Command(() =>
             {
                 RefreshPageProperties();
-                LoadUpcomingMovies();
+                LoadAplicationData();
             }));
         }
 
