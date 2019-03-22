@@ -9,17 +9,6 @@ About next steps (or application roadmap) we can consider:
 
 Features:
   - Search for specific movie;
-  - Account # My Movies
-##MoviesMobileApp
-
-A Xamarin.Forms application to follow up all everything about movies!
-
-At this very first version you can check all upcoming movies.
-
-About next steps (or application roadmap) we can consider:
-
-Features:
-  - Search for specific movie;
   - Account management;
   - More interaction with TMDb API;
   - Rate a movie!
