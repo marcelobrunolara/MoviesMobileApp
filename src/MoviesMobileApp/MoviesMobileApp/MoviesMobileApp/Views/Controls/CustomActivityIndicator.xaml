@@ -1,31 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MoviesMobileApp.Views.Controls.CustomActivityIndicator"                 
+    <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="MoviesMobileApp.Views.Controls.CustomActivityIndicator"                 
                  IsVisible="{Binding IsBusy}" 
                  AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                  AbsoluteLayout.LayoutFlags="All"
                  Padding="10, 0"
                  BackgroundColor="#BF0f0f0f">
 
-    <Frame CornerRadius="10" 
+        <Frame CornerRadius="10" 
                VerticalOptions="Center" 
                HorizontalOptions="Center" 
                Padding="5" 
                HeightRequest="100"
                WidthRequest="100"
                BackgroundColor="Orange">
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <ActivityIndicator HorizontalOptions="Center" 
-                               Color="#FFFFFF" 
-                               VerticalOptions="Center" 
-                               IsRunning="{Binding IsBusy}" 
-                               IsVisible="True" />
-            <Label Text="{Binding ActivityMessage}" 
-                   TextColor="#FFFFFF" 
-                   IsVisible="{Binding IsBusy}" 
-                   HorizontalOptions="Center" 
-                   VerticalOptions="Center" />
-        </StackLayout>
-    </Frame>
-</ContentView>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <ActivityIndicator HorizontalOptions="Center" 
+                                   Color="#FFFFFF" 
+                                   VerticalOptions="Center" 
+                                   IsRunning="{Binding IsBusy}"/>
+                <Label Text="{Binding ActivityMessage}" 
+                       Style="{DynamicResource WhiteCaptionLabelStyle}"
+                       IsVisible="{Binding IsBusy}" />
+            </StackLayout>
+        </Frame>
+    </ContentView>

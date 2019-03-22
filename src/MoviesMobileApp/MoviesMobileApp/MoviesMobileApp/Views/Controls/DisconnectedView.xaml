@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:imgSrc="clr-namespace:MoviesMobileApp.Helpers.Images"
-             x:Class="MoviesMobileApp.Views.Controls.DisconnectedView"
-             xmlns:i18n="clr-namespace:MoviesMobileApp.Helpers.Translate">
-    
-    <StackLayout HorizontalOptions="FillAndExpand"
-                 VerticalOptions="FillAndExpand">
-        <Image Source="{imgSrc:ImageSource MoviesMobileApp.Images.disconnected.jpg}"
+    <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:imgSrc="clr-namespace:MoviesMobileApp.Helpers.Images"
+                 x:Class="MoviesMobileApp.Views.Controls.DisconnectedView"
+                 xmlns:i18n="clr-namespace:MoviesMobileApp.Helpers.Translate">
+
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand">
+            <Image Source="{imgSrc:ImageSource MoviesMobileApp.Images.disconnected.jpg}"
                    Aspect="AspectFit"/>
-        <Label Text="{i18n:Translate label_back}"/>
-    </StackLayout>
-</ContentView>
+            <Label Text="{i18n:Translate label_back}" 
+                   Style="{DynamicResource CaptionCenteredLabelStyle}"/>
+        </StackLayout>
+    </ContentView>

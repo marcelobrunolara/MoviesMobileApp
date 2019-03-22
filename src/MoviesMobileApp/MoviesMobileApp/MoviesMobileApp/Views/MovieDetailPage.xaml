@@ -6,9 +6,7 @@
                  BackgroundColor="White">
         <ContentPage.Content>
             <ScrollView>
-                <StackLayout HorizontalOptions="FillAndExpand"
-                             VerticalOptions="FillAndExpand" 
-                             Padding="20">
+                <StackLayout Style="{DynamicResource DefaultMainStackLayout}">
                     <Image Source="{Binding CurrentItem.BackdropImageSource}"
                            Aspect="AspectFill"
                            HorizontalOptions="FillAndExpand"/>
@@ -26,24 +24,27 @@
                                      Grid.Row="0"
                                      VerticalOptions="Center">
                             <Label Text="{Binding CurrentItem.Name}"
-                                   FontSize="Large"
-                                   FontAttributes="Bold"/>
+                                   Style="{DynamicResource DefaultTitleLabelStyle}"
+                                   />
                             <Label>
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span FontAttributes="Bold"
+                                        <Span Style="{DynamicResource DefaultListItemBoldLabelStyle}"
                                               Text="{i18n:Translate label_genre_colon}"/>
-                                        <Span Text="{Binding CurrentItem.Genre}"/>
+                                        <Span Style="{DynamicResource DefaultListItemLabelStyle}" 
+                                              Text="{Binding CurrentItem.Genre}"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label Text="{Binding CurrentItem.Overview}"/>
+                            <Label Style="{DynamicResource DefaultCaptionLabelStyle}"  
+                                   Text="{Binding CurrentItem.Overview}"/>
                             <Label>
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span FontAttributes="Bold"
+                                        <Span Style="{DynamicResource DefaultListItemBoldLabelStyle}" 
                                               Text="{i18n:Translate label_release_colon}"/>
-                                        <Span Text="{Binding CurrentItem.ReleaseDate, StringFormat='{0:d}'}"/>
+                                        <Span  Style="{DynamicResource DefaultListItemLabelStyle}"  
+                                               Text="{Binding CurrentItem.ReleaseDate, StringFormat='{0:d}'}"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>

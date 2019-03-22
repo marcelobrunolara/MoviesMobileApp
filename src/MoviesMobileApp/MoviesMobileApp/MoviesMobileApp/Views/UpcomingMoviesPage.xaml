@@ -8,11 +8,10 @@
                  BackgroundColor="White">
         <ContentPage.Content>
             <AbsoluteLayout>
-            <StackLayout HorizontalOptions="FillAndExpand"
-                         VerticalOptions="FillAndExpand"
-                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
-                          AbsoluteLayout.LayoutFlags="All">
-                <ListView
+                <StackLayout Style="{DynamicResource DefaultMainStackLayout}"
+                             AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                             AbsoluteLayout.LayoutFlags="All">
+                    <ListView
                         x:Name="lstUpcoming"
                         ItemsSource="{Binding Items}"
                         SelectedItem="{Binding CurrentItem}"
@@ -21,70 +20,74 @@
                         RefreshCommand="{Binding RefreshUpcomingMoviesListCommand}"
                         IsPullToRefreshEnabled="True"
                         IsRefreshing="{Binding IsPullToRefreshBusy}">
-                    <ListView.Header>
-                        <StackLayout Padding="10">
-                        </StackLayout>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="150"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
+                        <ListView.Header>
+                            <StackLayout Style="{DynamicResource DefaultHeaderListViewStackLayout}">
+                            </StackLayout>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Style="{DynamicResource DefaultViewCellListViewStackLayout}">
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
 
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="200"/>
-                                    </Grid.RowDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="200"/>
+                                            </Grid.RowDefinitions>
                                     
-                                    <Image Source="{Binding PosterImageSource}"
-                                           Margin="10"
-                                           Aspect="AspectFit"
-                                           Grid.Column="0"
-                                           Grid.Row="0"/>
+                                            <Image Source="{Binding PosterImageSource}"
+                                                   Margin="10"
+                                                   Aspect="AspectFit"
+                                                   Grid.Column="0"
+                                                   Grid.Row="0"/>
                                     
-                                    <StackLayout Grid.Column="1"
-                                                 Grid.Row="0"
-                                                 VerticalOptions="Center">
-                                        <Label Text="{Binding Name}" FontAttributes="Bold" 
-                                               FontSize="Medium"/>
-                                        <Label>
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span FontAttributes="Bold"
-                                                          Text="{i18n:Translate label_genre_colon}"/>
-                                                    <Span Text="{Binding Genre}"/>
-                                                </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
-                                        <Label>
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span FontAttributes="Bold"
-                                                          Text="{i18n:Translate label_release_colon}"/>
-                                                    <Span Text="{Binding ReleaseDate, StringFormat='{0:d}'}"/>
-                                                </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
+                                            <StackLayout Grid.Column="1"
+                                                         Grid.Row="0"
+                                                         VerticalOptions="Center">
+                                                <Label Text="{Binding Name}" FontAttributes="Bold" 
+                                                       FontSize="Medium"/>
+                                                <Label>
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Style="{DynamicResource DefaultListItemBoldLabelStyle}"
+                                                                  Text="{i18n:Translate label_genre_colon}"/>
+                                                            <Span Style="{DynamicResource DefaultListItemLabelStyle}" 
+                                                                  Text="{Binding Genre}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                                <Label>
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Style="{DynamicResource DefaultListItemBoldLabelStyle}"
+                                                                  Text="{i18n:Translate label_release_colon}"/>
+                                                            <Span Style="{DynamicResource DefaultListItemLabelStyle}"  
+                                                                  Text="{Binding ReleaseDate, StringFormat='{0:d}'}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </StackLayout>
+                                        </Grid>
                                     </StackLayout>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                    <ListView.Footer>
-                        <StackLayout Padding="10">
-                            <cc:DisconnectedView IsVisible="{Binding IsDeviceOffline}"/>
-                            <cc:ErrorView IsVisible="{Binding AnErrorOcurred}"/>
-                            <Button Text="{i18n:Translate label_see_more}"
-                                    Style="{DynamicResource DefaultButtonStyle}" 
-                                    Command="{Binding UpcomingMoviesNextPageCommand}"
-                                    IsVisible="{Binding SeeMoreButtonVisibility}"/>
-                        </StackLayout>
-                    </ListView.Footer>
-                </ListView>
-            </StackLayout>
-            <cc:CustomActivityIndicator IsVisible="{Binding IsBusy}"/>
-        </AbsoluteLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.Footer>
+                            <StackLayout Style="{DynamicResource DefaultFooterListViewStackLayout}">
+                                <cc:DisconnectedView IsVisible="{Binding IsDeviceOffline}"/>
+                                <cc:ErrorView IsVisible="{Binding AnErrorOcurred}"/>
+                                <Button Text="{i18n:Translate label_see_more}"
+                                        Style="{DynamicResource DefaultButtonStyle}" 
+                                        Command="{Binding UpcomingMoviesNextPageCommand}"
+                                        IsVisible="{Binding SeeMoreButtonVisibility}"/>
+                            </StackLayout>
+                        </ListView.Footer>
+                    </ListView>
+                </StackLayout>
+                <cc:CustomActivityIndicator IsVisible="{Binding IsBusy}"/>
+            </AbsoluteLayout>
         </ContentPage.Content>
     </ContentPage>

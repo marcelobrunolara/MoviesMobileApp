@@ -50,7 +50,7 @@
                TargetType="StackLayout">
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="VerticalOptions" Value="FillAndExpand" />
-            <Setter Property="Padding" Value="20" />
+            <Setter Property="Padding" Value="10" />
         </Style>
 
         <Style x:Key="DefaultFooterListViewStackLayout"
@@ -64,8 +64,7 @@
                            TargetType="StackLayout">
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="VerticalOptions" Value="FillAndExpand" />
-            <Setter Property="Padding" Value="10" />
-        </Style>
+    </Style>
 
         <Style x:Key="DefaultHeaderListViewStackLayout"
                        TargetType="StackLayout">
