@@ -8,7 +8,7 @@
     <StackLayout HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand">
         <Image Source="{imgSrc:ImageSource MoviesMobileApp.Images.disconnected.jpg}"
-                   Aspect="AspectFill"/>
+                   Aspect="AspectFit"/>
         <Label Text="{i18n:Translate label_back}"/>
     </StackLayout>
 </ContentView>

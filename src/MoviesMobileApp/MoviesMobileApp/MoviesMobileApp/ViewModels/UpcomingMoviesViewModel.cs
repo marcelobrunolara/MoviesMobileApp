@@ -18,11 +18,14 @@ namespace MoviesMobileApp.ViewModels
 
         #region Fields
 
+        public const int MILLISECONDS_WAITING_TASK = 250;
+
         private string _warningMessage;
         private int _currentPage = 1;
         private bool _seeMoreButtonVisibility = false;
         private bool _isDeviceOffline;
         private bool _anErrorOcurred;
+        private Result<bool> _cachedInformationIsOk;
 
         private IMovieDbService _movieDbService;
         private MovieViewModel _currentItem;
@@ -99,12 +102,23 @@ namespace MoviesMobileApp.ViewModels
 
         public override void ExecuteBeforeBinding()
         {
+            if (CheckAndSetIfItsNotConnected())
+                return;
+
             LoadConfigurationAndGenreList();
             LoadUpcomingMovies();
         }
 
+        private bool CheckAndSetIfItsNotConnected()
+        {
+            return IsDeviceOffline = Connectivity.NetworkAccess != NetworkAccess.Internet;
+        }
+
         private void LoadConfigurationAndGenreList()
         {
+            if (IsBusy)
+                return;
+
             IsBusy = true;
 
             if (CheckAndSetIfItsNotConnected())
@@ -112,22 +126,16 @@ namespace MoviesMobileApp.ViewModels
                 IsBusy = false;
                 return;
             }
-
             Task.Run(async () =>
             {
                 await _movieDbService.GetAndSetConfigurationOnPreferences();
-                await _movieDbService.GetAndStoreGenres();
+                _cachedInformationIsOk = await _movieDbService.GetAndStoreGenres();
 
             }).ContinueWith(c =>
             {
                 if (c.IsCompleted)
                     IsBusy = false;
             });
-        }
-
-        private bool CheckAndSetIfItsNotConnected()
-        {
-            return IsDeviceOffline = Connectivity.NetworkAccess != NetworkAccess.Internet;
         }
 
         private void LoadUpcomingMovies()
@@ -142,6 +150,9 @@ namespace MoviesMobileApp.ViewModels
 
             Task.Run(async () =>
             {
+                while (_cachedInformationIsOk is null)
+                    await Task.Delay(MILLISECONDS_WAITING_TASK);
+
                 var response = await _movieDbService.GetUpcomingMovies(_currentPage);
 
                 if (response.IsValid)

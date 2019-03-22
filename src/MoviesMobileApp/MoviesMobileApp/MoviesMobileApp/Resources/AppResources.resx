@@ -126,6 +126,9 @@
   <data name="label_genre_colon" xml:space="preserve">
     <value>Genre: </value>
   </data>
+  <data name="label_loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
   <data name="label_release_colon" xml:space="preserve">
     <value>Release: </value>
   </data>

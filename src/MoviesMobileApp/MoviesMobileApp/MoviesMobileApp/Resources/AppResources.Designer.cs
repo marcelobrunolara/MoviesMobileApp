@@ -88,6 +88,15 @@ namespace MoviesMobileApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loading....
+        /// </summary>
+        internal static string label_loading {
+            get {
+                return ResourceManager.GetString("label_loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Release: .
         /// </summary>
         internal static string label_release_colon {

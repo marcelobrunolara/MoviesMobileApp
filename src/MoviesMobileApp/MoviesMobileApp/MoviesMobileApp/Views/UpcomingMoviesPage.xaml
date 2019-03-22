@@ -20,8 +20,7 @@
                         HasUnevenRows="True"
                         RefreshCommand="{Binding RefreshUpcomingMoviesListCommand}"
                         IsPullToRefreshEnabled="True"
-                        IsRefreshing="{Binding IsPullToRefreshBusy}"
-                    >
+                        IsRefreshing="{Binding IsPullToRefreshBusy}">
                     <ListView.Header>
                         <StackLayout Padding="10">
                         </StackLayout>
@@ -31,22 +30,25 @@
                             <ViewCell>
                                 <Grid >
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="150"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="200"/>
+                                    </Grid.RowDefinitions>
+                                    
                                     <Image Source="{Binding PosterImageSource}"
                                            Margin="10"
                                            Aspect="AspectFit"
                                            Grid.Column="0"
                                            Grid.Row="0"/>
-
+                                    
                                     <StackLayout Grid.Column="1"
                                                  Grid.Row="0"
                                                  VerticalOptions="Center">
                                         <Label Text="{Binding Name}" FontAttributes="Bold" 
                                                FontSize="Medium"/>
-
                                         <Label>
                                             <Label.FormattedText>
                                                 <FormattedString>
@@ -56,7 +58,6 @@
                                                 </FormattedString>
                                             </Label.FormattedText>
                                         </Label>
-
                                         <Label>
                                             <Label.FormattedText>
                                                 <FormattedString>
@@ -76,12 +77,9 @@
                             <cc:DisconnectedView IsVisible="{Binding IsDeviceOffline}"/>
                             <cc:ErrorView IsVisible="{Binding AnErrorOcurred}"/>
                             <Button Text="{i18n:Translate label_see_more}"
+                                    Style="{DynamicResource DefaultButtonStyle}" 
                                     Command="{Binding UpcomingMoviesNextPageCommand}"
-                                    HorizontalOptions="FillAndExpand"
-                                    TextColor="Orange"
-                                    BackgroundColor="Orange"
-                                    IsVisible="{Binding SeeMoreButtonVisibility}"
-                                    CornerRadius="5"/>
+                                    IsVisible="{Binding SeeMoreButtonVisibility}"/>
                         </StackLayout>
                     </ListView.Footer>
                 </ListView>

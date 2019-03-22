@@ -6,7 +6,7 @@
     <StackLayout HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand">
         <Image Source="{imgSrc:ImageSource MoviesMobileApp.Images.errorocurred.jpg}"
-                   Aspect="AspectFill"/>
+                   Aspect="AspectFit"/>
         <Label Text="{Binding WarningMessage}"/>
     </StackLayout>
 </ContentView>
