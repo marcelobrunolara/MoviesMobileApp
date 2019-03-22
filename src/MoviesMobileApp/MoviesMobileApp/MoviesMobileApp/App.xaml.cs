@@ -3,7 +3,7 @@ using MoviesMobileApp.Helpers;
 using MoviesMobileApp.IoC;
 using MoviesMobileApp.ViewModels.Interfaces;
 using MoviesMobileApp.Views.Interfaces;
-using System;
+using Plugin.Multilingual;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,8 +34,8 @@ namespace MoviesMobileApp
 
         private void GetDeviceLanguageAndRegion()
         {
-            MyPreferences.LanguageInfo ="en-US";
-            MyPreferences.RegionInfo = "US";
+            MyPreferences.LanguageInfo = CrossMultilingual.Current.CurrentCultureInfo.Name;
+            MyPreferences.RegionInfo = System.Globalization.RegionInfo.CurrentRegion.TwoLetterISORegionName;
         }
 
     }

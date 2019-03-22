@@ -9,7 +9,7 @@
                      VerticalOptions="CenterAndExpand">
             <Image Source="{imgSrc:ImageSource MoviesMobileApp.Images.disconnected.jpg}"
                    Aspect="AspectFit"/>
-            <Label Text="{i18n:Translate label_back}" 
+            <Label Text="{i18n:Translate label_without_connection}" 
                    Style="{DynamicResource CaptionCenteredLabelStyle}"/>
         </StackLayout>
     </ContentView>

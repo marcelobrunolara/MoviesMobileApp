@@ -132,11 +132,11 @@
   <data name="label_see_more" xml:space="preserve">
     <value>Ver mais</value>
   </data>
+  <data name="label_without_connection" xml:space="preserve">
+    <value>Você não está conectado à internet.</value>
+  </data>
   <data name="msg_error_colon" xml:space="preserve">
     <value>Erro: </value>
-  </data>
-  <data name="msg_without_connection" xml:space="preserve">
-    <value>Você está conectado à internet.</value>
   </data>
   <data name="title_upcoming_movies" xml:space="preserve">
     <value>Proximos lançamentos!</value>

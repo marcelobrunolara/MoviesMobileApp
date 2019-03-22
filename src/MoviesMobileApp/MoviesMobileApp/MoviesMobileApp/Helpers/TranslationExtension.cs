@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Multilingual;
+using System;
 using System.Reflection;
 using System.Resources;
 using Xamarin.Forms;
@@ -20,7 +21,7 @@ namespace MoviesMobileApp.Helpers.Translate
             if (Text == null)
                 return "";
 
-            var ci = System.Globalization.CultureInfo.CurrentCulture;
+            var ci = CrossMultilingual.Current.CurrentCultureInfo;
 
             var translation = resmgr.Value.GetString(Text, ci);
 
