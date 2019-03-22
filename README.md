@@ -17,7 +17,8 @@ Application design:
   - a better aproach to deal with API error message;
   - enhance image perfomance through a internal Db;
   - enhance listview performance;
-  - enhance iOS/Android UI.
+  - enhance iOS/Android UI;
+  - more unit tests to increase code coverage.
 
 ### ML.Framework 
 
