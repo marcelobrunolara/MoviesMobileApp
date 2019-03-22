@@ -186,8 +186,7 @@
           }
         },
         "build": {
-          "build/Xamarin.Forms.props": {},
-          "build/Xamarin.Forms.targets": {}
+          "build/_._": {}
         }
       },
       "ML.Framework/0.1.0-beta": {
@@ -407,8 +406,7 @@
           }
         },
         "build": {
-          "build/Xamarin.Forms.props": {},
-          "build/Xamarin.Forms.targets": {}
+          "build/_._": {}
         }
       },
       "ML.Framework/0.1.0-beta": {
@@ -628,8 +626,7 @@
           }
         },
         "build": {
-          "build/Xamarin.Forms.props": {},
-          "build/Xamarin.Forms.targets": {}
+          "build/_._": {}
         }
       },
       "ML.Framework/0.1.0-beta": {
@@ -849,8 +846,7 @@
           }
         },
         "build": {
-          "build/Xamarin.Forms.props": {},
-          "build/Xamarin.Forms.targets": {}
+          "build/_._": {}
         }
       },
       "ML.Framework/0.1.0-beta": {
@@ -1336,40 +1332,38 @@
     "Xamarin.iOS,Version=v1.0": [
       "MoviesMobileApp >= 1.0.0",
       "Plugin.Multilingual >= 1.0.2",
-      "Xamarin.Essentials >= 1.1.0",
-      "Xamarin.Forms >= 3.6.0.264807"
+      "Xamarin.Essentials >= 1.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\1033070\\.nuget\\packages\\": {}
+    "C:\\Users\\marce\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Source\\MoviesMobileApp-development\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.iOS\\MoviesMobileApp.iOS.csproj",
+      "projectUniqueName": "D:\\GIT\\MoviesMobileApp\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.iOS\\MoviesMobileApp.iOS.csproj",
       "projectName": "MoviesMobileApp.iOS",
-      "projectPath": "D:\\Source\\MoviesMobileApp-development\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.iOS\\MoviesMobileApp.iOS.csproj",
-      "packagesPath": "C:\\Users\\1033070\\.nuget\\packages\\",
-      "outputPath": "D:\\Source\\MoviesMobileApp-development\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.iOS\\obj\\",
+      "projectPath": "D:\\GIT\\MoviesMobileApp\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.iOS\\MoviesMobileApp.iOS.csproj",
+      "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
+      "outputPath": "D:\\GIT\\MoviesMobileApp\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\1033070\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
-        "\\\\gtitfsbuild01\\cachepackages": {},
-        "http://gtitfsbuild01/GTIPackages/nuget/": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Source\\MoviesMobileApp-development\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.csproj": {
-              "projectPath": "D:\\Source\\MoviesMobileApp-development\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.csproj"
+            "D:\\GIT\\MoviesMobileApp\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.csproj": {
+              "projectPath": "D:\\GIT\\MoviesMobileApp\\src\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp\\MoviesMobileApp.csproj"
             }
           }
         }
@@ -1385,10 +1379,6 @@
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.1.0, )"
-          },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "[3.6.0.264807, )"
           }
         }
       }

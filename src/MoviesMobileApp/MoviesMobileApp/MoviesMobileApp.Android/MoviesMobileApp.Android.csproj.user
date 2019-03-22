@@ -3,6 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Samsung GT-I9505</SelectedDevice>
     <DefaultDevice>my_device</DefaultDevice>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>
