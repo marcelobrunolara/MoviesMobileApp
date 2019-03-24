@@ -16,7 +16,7 @@ namespace MoviesMobileApp.Droid
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Android.Glide.Forms.Init(true);
+            Android.Glide.Forms.Init();
             LoadApplication(new App());
         }
     }

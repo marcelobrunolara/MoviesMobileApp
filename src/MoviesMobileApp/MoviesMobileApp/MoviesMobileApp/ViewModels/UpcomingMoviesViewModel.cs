@@ -154,6 +154,9 @@ namespace MoviesMobileApp.ViewModels
 
         private void LoadUpcomingMovies()
         {
+            while (_cachedInformationIsOk is null)
+                Task.Delay(MILLISECONDS_WAITING_TASK);
+
             IsBusy = true;
 
             if (CheckAndSetIfItsNotConnected())
@@ -164,9 +167,6 @@ namespace MoviesMobileApp.ViewModels
 
             Task.Run(async () =>
             {
-                while (_cachedInformationIsOk is null)
-                    await Task.Delay(MILLISECONDS_WAITING_TASK);
-
                 var response = await _movieDbService.GetUpcomingMovies(_currentPage);
 
                 if (response.IsValid)

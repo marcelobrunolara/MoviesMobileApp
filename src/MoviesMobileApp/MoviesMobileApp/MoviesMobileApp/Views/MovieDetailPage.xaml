@@ -1,60 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:i18n="clr-namespace:MoviesMobileApp.Helpers.Translate"
                  x:Class="MoviesMobileApp.Views.MovieDetailPage"
                  BackgroundColor="White">
-        <ContentPage.Content>
-            <ScrollView>
-                <StackLayout Style="{DynamicResource DefaultMainStackLayout}">
-                    <Image Source="{Binding CurrentItem.BackdropImageSource}"
-                           Aspect="AspectFill"
-                           HorizontalOptions="FillAndExpand"/>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="{Binding CurrentItem.PosterImageSource}"
-                               Margin="10"
-                               Aspect="AspectFit"
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Style="{DynamicResource DefaultMainStackLayout}">
+                <Image Source="{Binding CurrentItem.BackdropImageSource}"
+                        Style="{DynamicResource BackdropImageStyle}"
+                           />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding CurrentItem.PosterImageSource}"
+                               Style="{DynamicResource MiniPosterImageStyle}" 
                                Grid.Column="0"
                                Grid.Row="0"/>
-                        <StackLayout Grid.Column="1"
+                    <StackLayout Grid.Column="1"
                                      Grid.Row="0"
                                      VerticalOptions="Center">
-                            <Label Text="{Binding CurrentItem.Name}"
+                        <Label Text="{Binding CurrentItem.Name}"
                                    Style="{DynamicResource DefaultTitleLabelStyle}"
                                    />
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Style="{DynamicResource DefaultListItemBoldLabelStyle}"
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Style="{DynamicResource DefaultListItemBoldLabelStyle}"
                                               Text="{i18n:Translate label_genre_colon}"/>
-                                        <Span Style="{DynamicResource DefaultListItemLabelStyle}" 
+                                    <Span Style="{DynamicResource DefaultListItemLabelStyle}" 
                                               Text="{Binding CurrentItem.Genre}"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label Style="{DynamicResource DefaultCaptionLabelStyle}"  
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Style="{DynamicResource DefaultCaptionLabelStyle}"  
                                    Text="{Binding CurrentItem.Overview}"/>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Style="{DynamicResource DefaultListItemBoldLabelStyle}" 
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Style="{DynamicResource DefaultListItemBoldLabelStyle}" 
                                               Text="{i18n:Translate label_release_colon}"/>
-                                        <Span  Style="{DynamicResource DefaultListItemLabelStyle}"  
+                                    <Span  Style="{DynamicResource DefaultListItemLabelStyle}"  
                                                Text="{Binding CurrentItem.ReleaseDate, StringFormat='{0:d}'}"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                        </StackLayout>
-                    </Grid>
-                    <Button Text="{i18n:Translate label_back}"
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </Grid>
+                <Button Text="{i18n:Translate label_back}"
                             Command="{Binding CloseModalCommand}"
                             Style="{DynamicResource DefaultButtonStyle}" 
                             />
-                </StackLayout>
-            </ScrollView>
-        </ContentPage.Content>
-    </ContentPage>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
