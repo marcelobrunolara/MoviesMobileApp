@@ -15,7 +15,6 @@ Features:
 
 Application design:
   - a better aproach to deal with API error message;
-  - enhance image perfomance through a internal Db;
   - enhance listview performance;
   - enhance iOS/Android UI;
   - more unit tests to increase code coverage.
@@ -35,13 +34,12 @@ Internal Features Already Included:
 ### Plugins
 
 My Movies is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
-
 | Plugin | README |
 | ------ | ------ |
 | Xamarin.Essentials | [https://github.com/xamarin/Essentials][PlDb] |
 | Plugin.Multilingual | [https://github.com/CrossGeeks/MultilingualPlugin][PlGh] |
 | Newtonsoft.Json | [https://github.com/JamesNK/Newtonsoft.Json][PlGd] |
-
+| Glidex.Forms | [https://github.com/jonathanpeppers/glidex][PlGd] |
 
 ## To developers
  
