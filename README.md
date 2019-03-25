@@ -34,6 +34,8 @@ Internal Features Already Included:
 ### Plugins
 
 My Movies is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+
+
 | Plugin | README |
 | ------ | ------ |
 | Xamarin.Essentials | [https://github.com/xamarin/Essentials][PlDb] |
