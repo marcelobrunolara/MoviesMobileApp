@@ -1,9 +1,9 @@
 # My Movies
 ## MoviesMobileApp
 
-A Xamarin.Forms application to follow up all everything about movies!
+A Xamarin.Forms application to follow up everything about movies!
 
-At this very first version you can check all upcoming movies with device localization support.
+At this very first version you can check upcoming movies within your device localization!
 
 About next steps (or application roadmap) we can consider:
 
