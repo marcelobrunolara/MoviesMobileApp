@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:imgSrc="clr-namespace:MoviesMobileApp.Helpers.Images"
+                 x:Class="MoviesMobileApp.Views.Controls.ErrorView">
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand">
+            <Image Source="{imgSrc:ImageSource MoviesMobileApp.Images.errorocurred.jpg}"
+                   Aspect="AspectFit"/>
+            <Label Text="{Binding WarningMessage}" 
+                   Style="{DynamicResource CaptionCenteredLabelStyle}"/>
+        </StackLayout>
+    </ContentView>

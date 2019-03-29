@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ML.Framework</id>
+    <version>0.1.0-beta</version>
+    <authors>Marcelo Bruno Lara</authors>
+    <owners>Marcelo Bruno Lara</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ML.Framework (Beta) - A Micro MVVM framework to Xamarin Forms with IoC and Rest Connector as built-in features.</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="SimpleInjector" version="4.4.3" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms" version="3.6.0.264807" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\GIT\MoviesMobileApp\src\ML.Framework\bin\Debug\netstandard2.0\ML.Framework.dll" target="lib\netstandard2.0\ML.Framework.dll" />
+  </files>
+</package>

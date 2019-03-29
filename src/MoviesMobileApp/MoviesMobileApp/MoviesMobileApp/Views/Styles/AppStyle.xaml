@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        x:Class="MoviesMobileApp.Views.Styles.AppStyle">
+
+    <Style x:Key="DefaultButtonStyle"
+               TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Orange" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="0,10,0,10" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <Style x:Key="DefaultImageStyle"
+               TargetType="Image">
+        <Setter Property="Aspect" Value="AspectFill"/>
+    </Style>
+
+    <Style x:Key="MiniPosterImageStyle"
+               TargetType="Image">
+        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="HeightRequest" Value="150" />
+        <Setter Property="Aspect" Value="AspectFit" />
+    </Style>
+
+    <Style x:Key="PosterImageStyle"
+               TargetType="Image">
+        <Setter Property="WidthRequest" Value="150" />
+        <Setter Property="WidthRequest" Value="225" />
+        <Setter Property="Aspect" Value="AspectFit" />
+    </Style>
+
+    <Style x:Key="BackdropImageStyle"
+               TargetType="Image"
+               BasedOn="{StaticResource DefaultImageStyle}">
+        <Setter Property="HeightRequest" Value="200"/>
+    </Style>
+
+    <Style x:Key="DefaultTitleLabelStyle"
+               TargetType="Label"
+               BaseResourceKey="TitleStyle">
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <Style x:Key="DefaultSubtitleLabelStyle"
+               TargetType="Label"
+               BaseResourceKey="SubtitleStyle">
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <Style x:Key="DefaultListItemLabelStyle"
+               TargetType="Label"
+               BaseResourceKey="ListItemDetailTextStyle">
+    </Style>
+
+    <Style x:Key="DefaultListItemBoldLabelStyle"
+               TargetType="Label"
+               BaseResourceKey="ListItemDetailTextStyle">
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="DefaultCaptionLabelStyle"
+               TargetType="Label"
+               BaseResourceKey="CaptionStyle">
+    </Style>
+
+    <Style x:Key="WhiteCaptionLabelStyle"
+               TargetType="Label"
+               BasedOn="{StaticResource DefaultCaptionLabelStyle}">
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="DefaultMainStackLayout"
+               TargetType="StackLayout">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+    <Style x:Key="DefaultFooterListViewStackLayout"
+               TargetType="StackLayout">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+    <Style x:Key="DefaultViewCellListViewStackLayout"
+               TargetType="StackLayout">
+        <Setter Property="Spacing" Value="10"/>
+        <Setter Property="Padding" Value="0,10,0,10"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <Style x:Key="DefaultHeaderListViewStackLayout"
+               TargetType="StackLayout">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+</ResourceDictionary>
